@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 //import java.util.Scanner;
 
 public class Stores {
@@ -8,6 +9,35 @@ public class Stores {
     public String getName() {
         return name;
     }
+=======
+import java.util.List;
+
+public class Stores {
+    String name;
+    String street_name;			// street address of the store
+    String city_state;
+    String phone_number;
+    List<Phones> inventory;
+
+    public void setStore_Name(String name) {
+        this.name = name;
+    }
+
+    public void setStreet_name(String street_name) {
+        this.street_name = street_name;
+    }
+
+    public void setCity_state(String city_state) {
+        this.city_state = city_state;
+    }
+
+    public void setStore(List<Phones> inventory){
+        this.inventory = inventory;
+    }
+
+
+    public Stores(){}
+>>>>>>> c4d771fbefef7ac8bbae99ea62fd0b6497458da3
 
     public void setName(String name) {
         this.name = name;
@@ -25,6 +55,7 @@ public class Stores {
         return phone_number;
     }
 
+<<<<<<< HEAD
     public void setPhone_number(String phone_number) {
         this.phone_number = phone_number;
     }
@@ -67,6 +98,14 @@ public class Stores {
                             "              " + store.getCity_state() + "\n" +
                             "Phone Number: " + store.getPhone_number() + "\n" +
                             "\n-----------__---(o)_(o)---__ ---------------\n");
+=======
+    public static Stores[] createStore(){
+        Stores[] stores;
+        Stores newjersey = new Stores("NJ Long Beach Eye-Land", "456 LBEye Street", "Long Beach, NJ", "(609)393-5263");
+        Stores penn = new Stores("Beast B-Eye", "789 B-eyeB-eye Street", "Philadelphia, PA", "(215)232-7824");
+        for (Stores store : stores = new Stores[]{newjersey,penn}) {
+            return new Stores[]{store, newjersey, penn};
+>>>>>>> c4d771fbefef7ac8bbae99ea62fd0b6497458da3
         }
         return stores;
     }
@@ -104,5 +143,13 @@ public class Stores {
         }
     }*/
 
+<<<<<<< HEAD
     //todo create method to add new phones from outside source
+=======
+}
+    public static String addPhoneToStore(){
+       // Phones[] stock = Inventory.createSmart(); 	// inventory of Smartphones in this store
+        return "";
+    }
+>>>>>>> c4d771fbefef7ac8bbae99ea62fd0b6497458da3
 }
