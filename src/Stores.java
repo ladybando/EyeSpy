@@ -1,46 +1,47 @@
-<<<<<<< HEAD
-//import java.util.Scanner;
+import java.util.ArrayList;
 
 public class Stores {
     private String name;
     private String street_name;            // street address of the store
     private String city_state;
+    private static ArrayList<Inventory> inventory;
 
     public String getName() {
         return name;
     }
-=======
-import java.util.List;
 
-public class Stores {
-    String name;
-    String street_name;			// street address of the store
-    String city_state;
-    String phone_number;
-    List<Phones> inventory;
+    /*  public void setStore_Name(String name) {
+          this.name = name;
+      }
 
-    public void setStore_Name(String name) {
-        this.name = name;
+      public void setStreet_name(String street_name) {
+          this.street_name = street_name;
+      }
+
+      public void setCity_state(String city_state) {
+          this.city_state = city_state;
+      }
+
+      public void setStore(ArrayList<Inventory> inventory){
+          this.inventory = inventory;
+      }
+
+      public Stores() {
+      }
+
+      // public void setName(String name) { this.name = name; }
+      */
+    public void setInventory(Phones addPhone) {
+        inventory.add(addPhone);
     }
 
-    public void setStreet_name(String street_name) {
-        this.street_name = street_name;
-    }
-
-    public void setCity_state(String city_state) {
-        this.city_state = city_state;
-    }
-
-    public void setStore(List<Phones> inventory){
-        this.inventory = inventory;
-    }
-
-
-    public Stores(){}
->>>>>>> c4d771fbefef7ac8bbae99ea62fd0b6497458da3
-
-    public void setName(String name) {
-        this.name = name;
+//todo add items to array
+    //decide which items that should be
+    public ArrayList<Inventory> displayInventory() {
+        for (Inventory phone : inventory) {
+            phone.unveilPhones();
+        }
+        return inventory;
     }
 
     public String getStreet_name() {
@@ -54,102 +55,30 @@ public class Stores {
     public String getPhone_number() {
         return phone_number;
     }
-
-<<<<<<< HEAD
-    public void setPhone_number(String phone_number) {
-        this.phone_number = phone_number;
-    }
+    //public void setPhone_number(String phone_number) {this.phone_number = phone_number;}
 
     private String phone_number;
-
-
-    public void setStore_Name(String name) {
-        this.name = name;
-    }
-
-    public void setStreet_name(String street_name) {
-        this.street_name = street_name;
-    }
-
-    public void setCity_state(String city_state) {
-        this.city_state = city_state;
-    }
-
-    public Stores() {
-    }
 
     public Stores(String store_name, String store_street_name, String store_city_state, String store_phone_number) {
         name = store_name;
         street_name = store_street_name;
         city_state = store_city_state;
         phone_number = store_phone_number;
+        this.inventory = new ArrayList<>();
     }
 
-    public Stores[] showStore() {
-        Stores[] stores = new Stores[0];
-        Stores newyork = new Stores("New York H-Eye R-Eyes", "123 High Rise", "NY, NY", "(917)777-7777");
-        Stores newjersey = new Stores("NJ Long Beach Eye-Land", "456 LBEye Street", "Long Beach, NJ", "(609)393-5263");
-        Stores penn = new Stores("Beast B-Eye", "789 B-eyeB-eye Street", "Philadelphia, PA", "(215)232-7824");
-        stores = new Stores[]{newjersey,newyork,penn};
-        for (Stores store : stores) {
-            System.out.println(
-                    "Name:         " + store.getName() + "\n" +
-                            "Address:      " + store.getStreet_name() + "\n" +
-                            "              " + store.getCity_state() + "\n" +
-                            "Phone Number: " + store.getPhone_number() + "\n" +
-                            "\n-----------__---(o)_(o)---__ ---------------\n");
-=======
-    public static Stores[] createStore(){
-        Stores[] stores;
-        Stores newjersey = new Stores("NJ Long Beach Eye-Land", "456 LBEye Street", "Long Beach, NJ", "(609)393-5263");
-        Stores penn = new Stores("Beast B-Eye", "789 B-eyeB-eye Street", "Philadelphia, PA", "(215)232-7824");
-        for (Stores store : stores = new Stores[]{newjersey,penn}) {
-            return new Stores[]{store, newjersey, penn};
->>>>>>> c4d771fbefef7ac8bbae99ea62fd0b6497458da3
-        }
-        return stores;
-    }
-//todo make createStores method and have show store call method
-    //public S
-//todo make below method work properly
-/*    public void showStoreInventory() {
-        while (true) {
-            System.out.print("Select 'phone', 'store', 'stock', or 'q' to quit: ");
-            Scanner input = new Scanner(System.in);
-            String answer = input.next();
-            if (answer.equals("store")) {
-                System.out.print("Eye-ing all stores or stores with Androids? Enter 'all' or 'Android': ");
-                answer = input.next();
-                if (answer.equals("all")) {
-                    spy.unveilStores();
-                } else if (answer.equalsIgnoreCase("ANDROID")) {
-                    System.out.println(newyork.name + " at " + newyork.street_name + ", " + newyork.city_state + " has " + newyork.inventory.get(1) + " devices in stock.");
-                }
-            } else if (answer.equals("stock")) {
-                System.out.println("EyeSpy with my little eye the total inventory: " + stock.length);
-            }
-            if (answer.equals("phone")) {
-                System.out.print("Eye-ing all phones or just some features? Enter 'phone' or 'feat': ");
-                answer = input.next();
-            }
-            switch (answer) {
-                case "phone" -> phone.unveil();
-                //case "feat" -> phone.unveilByFeat();
-                case "q" -> {
-                    System.out.println("Thanks for spying all you needed with us!");
-                    System.exit(0);
-                }
-            }
-        }
-    }*/
+    public Stores(){}
 
-<<<<<<< HEAD
+    public void unveilStores() {
+        System.out.println(
+                "Name:         " + getName() + "\n" +
+                        "Address:      " + getStreet_name() + "\n" +
+                        "              " + getCity_state() + "\n" +
+                        "Phone Number: " + getPhone_number() + "\n" +
+                        "\n-----------__---(o)_(o)---__ ---------------\n");
+    }
+
+
     //todo create method to add new phones from outside source
-=======
-}
-    public static String addPhoneToStore(){
-       // Phones[] stock = Inventory.createSmart(); 	// inventory of Smartphones in this store
-        return "";
-    }
->>>>>>> c4d771fbefef7ac8bbae99ea62fd0b6497458da3
+
 }
